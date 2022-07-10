@@ -31,7 +31,7 @@ public class Spawner : MonoBehaviour
 
             GameObject spawnedMonster = Instantiate(monsters[currentEnemy]);
 
-            spawnedMonster.transform.position = new Vector3(this.SPAWNER_POS_X[currentSpawner], this.transform.position.y, this.transform.position.z);
+            spawnedMonster.transform.position = new Vector3(this.SPAWNER_POS_X[currentSpawner], spawnedMonster.transform.position.y, spawnedMonster.transform.position.z);
         }
     }
 }

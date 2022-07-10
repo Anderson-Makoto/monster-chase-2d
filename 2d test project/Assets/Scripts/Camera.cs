@@ -21,6 +21,8 @@ public class Camera : MonoBehaviour
 
     private void followPlayer()
     {
+        if (!this.playerTransform) return;
+        
         if (MIN_X >= this.playerTransform.position.x || MAX_X <= this.playerTransform.position.x) 
         {
             return;
