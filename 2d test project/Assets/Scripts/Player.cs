@@ -16,6 +16,9 @@ public class Player : MonoBehaviour
 
     private const string WALK_ANIMATION = "Walk";
     private const string GROUND_TAG = "Ground";
+    private const string GHOST_TAG = "Ghost";
+    private const string ENEMY_1_TAG = "Enemy 1";
+    private const string ENEMY_2_TAG = "Enemy 2";
     private const int MAX_X = 57;
     private const int MIN_X = -57;
 
@@ -83,6 +86,16 @@ public class Player : MonoBehaviour
         if (collision2d.gameObject.CompareTag(GROUND_TAG))
         {
             this.isGrounded = true;
+        }
+
+        List<string> enemies = new List<string>();
+        enemies.Add(ENEMY_1_TAG);
+        enemies.Add(ENEMY_2_TAG);
+        enemies.Add(GHOST_TAG);
+
+        if (enemies.Contains(collision2d.gameObject.tag))
+        {
+            Destroy(this.gameObject);
         }
     }
 }
